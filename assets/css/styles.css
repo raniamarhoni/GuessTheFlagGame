@@ -1,0 +1,92 @@
+body {
+    background-color: #8F9E88;
+    font-family: 'Acme', sans-serif;
+    padding: 10px 0px;
+    max-width: 100%  !important;
+    overflow-x: hidden;
+}
+
+/*----------HEADER SECTION----------*/
+
+.header {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px;
+}
+
+.description {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 1em;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        font-size: 3.5em
+    }
+    .description {
+        font-size: 1.5em
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        font-size: 4em;
+    }
+}
+
+/*----------GAME BACKGROUND----------*/
+
+.game-section {
+    position: relative;
+    background-color: white;
+    max-width: 300px;
+    margin: auto;
+    font-family: sans-serif;
+    min-height: 300px;
+}
+
+@media (min-width: 768px) {
+    .game-section {
+        max-width: 600px;
+        min-height: 600px;
+    }
+}
+
+@media (min-width: 992px) {
+    .game-section {
+        max-width: 800px;
+        min-height: 800px;
+    }
+}
+
+/*----------START BUTTON----------*/
+
+#Startbtn {
+    background-color: #8F9E88;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+}
+
+@media (min-width: 768px) {
+    #Startbtn {
+        font-size: 3.5em
+    }
+}
+
+@media (min-width: 992px) {
+    #Startbtn {
+        font-size: 4em
+    }
+}
