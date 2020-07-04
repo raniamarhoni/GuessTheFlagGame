@@ -6,6 +6,13 @@ body {
     overflow-x: hidden;
 }
 
+/*----------Bootstrap grid----------*/
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
 /*----------HEADER SECTION----------*/
 
 .header {
@@ -88,6 +95,47 @@ body {
 @media (min-width: 992px) {
     #Startbtn {
         font-size: 4em
+    }
+}
+
+/*----------SCORE AND TIMER----------*/
+#score-section {
+    position: relative;
+    padding: 10px;
+    text-align: left;
+    margin: 0px;
+    font-size: 1em;
+}
+
+.timer-section {
+    text-align: right;
+    padding:10px;
+    position: relative;
+    margin: 0px;
+    color: black;
+}
+
+#timer {
+    font-size: 1em;
+}
+
+@media (min-width: 768px) {
+    #score-section {
+        font-size: 1.5em;
+    }
+
+    #timer {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 992px) {
+    #score-section {
+        font-size: 2em;
+    }
+
+    #timer {
+        font-size: 2em;
     }
 }
 

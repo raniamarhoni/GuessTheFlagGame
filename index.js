@@ -6,7 +6,13 @@ function StartGame() {
 
 // function start game
 function PlayGame() { 
-    $("#Startbtn").remove(); 
+    $("#Startbtn").remove();
+    $("#score-para").append('<p>Score: <span id="score">'+score+'</span></p>');
+    // StartTimer();  Start Timer function 
+}
+
+// Time function
+function StartTimer() {
 }
 
 // Modal on page load 
