@@ -8,3 +8,8 @@ function StartGame() {
 function PlayGame() { 
     $("#Startbtn").remove(); 
 }
+
+// Modal on page load 
+function loadModal() {
+    $('#Modal').modal('show');
+}

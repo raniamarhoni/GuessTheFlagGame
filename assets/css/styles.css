@@ -90,3 +90,29 @@ body {
         font-size: 4em
     }
 }
+
+/*----------LOAD IN MODAL SECTION----------*/
+
+.modal {
+    color: black;
+    text-align: left;
+    display: block;
+    font-family: sans-serif;
+}
+
+.modal-body {
+    font-size: 20px;
+}
+
+.modal-btn {
+    background-color: #8F9E88;
+    color: white;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.modal-subtitle {
+    font-size: 26px;
+}

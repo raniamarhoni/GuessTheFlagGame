@@ -13,7 +13,7 @@
 	<title>Guess the Flag</title>
 </head>
 
-<body>
+<body onload="loadModal()">
 
     <!--*******HEADER SECTION*******-->
 	<div class="header-section">
@@ -30,6 +30,26 @@
         </div>
 
     </div>
+
+    <!--*******MODAL LOAD IN*******-->
+	<div class="modal fade" tabindex="-1" role="dialog" id='Modal'>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Welcome to Guess the flag</h4>
+					<button type="button" class="close" data-dismiss="modal" style="text-align: right;" aria-label="Close"><span aria-hidden="true">×</span></button>
+				</div>
+				<div class="modal-body">
+					<p class="modal-subtitle">How To Play:</p>
+					<p>You have 30 seconds to guess the country's flag you have 4 options to pick from.</p>
+					<p>Press Start to start the game</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn modal-btn" data-dismiss="modal">Let's Play!</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
     <!--*******SCRIPTS*******-->
