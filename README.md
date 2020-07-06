@@ -21,7 +21,7 @@ I wanted to create a minimalistic look so the page
 would not be too distracting. and the user would be 
 able to focus on the game. 
 
-I used adobe XD to decide the design here is the [design] (https://github.com/raniamarhoni/GuessTheFlagGame/blob/f2ca1ea5b6c6cf5621ee7e22341138bf28aef229/assets/design/Game.xd)
+I used adobe XD to decide the design here is the [design](https://github.com/raniamarhoni/GuessTheFlagGame/blob/f2ca1ea5b6c6cf5621ee7e22341138bf28aef229/assets/design/Game.xd)
 
 I included a modal which explains the game, so they know 
 how to play as soon as they get on the page. 
@@ -32,7 +32,14 @@ There is also a small description on top of the game.
  You have 4 options to pick from. 
 
 ## Features 
-There is a timing function which is set for 30 seconds. When the timer runs out the game is over. 
+There is a timing function which is set for 30 seconds. 
+When the timer runs out the game is over. 
+
+Flags are obtained by https://www.countryflags.io/ and 
+a array put into another js file 
+([Countryflags](https://github.com/raniamarhoni/GuessTheFlagGame/blob/afc44a844d84f94245770742e9acd3d3095fba1e/assets/js/countrylist.js)).
+This will help the game to have access to lots of flags but 
+also be able to decide which flags can show. 
 
 High Score ... 
 
@@ -51,6 +58,9 @@ High Score ...
 5.Bootstrap  
 
 ## Testing 
+I've used console.log to check the right outcomes come out.
+I've left testing after each function to make sure all the 
+testing stays correct while building the rest of the game.
 
 ## Deployment
 

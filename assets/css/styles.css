@@ -139,6 +139,24 @@ body {
     }
 }
 
+/*----------GAME FLAG QUIZ----------*/
+.flag-section {
+    text-align: center;
+    min-height: 100px;
+}
+
+#flag-image {
+    height:100px;
+    width:100px;
+}
+
+@media (min-width: 768px) {
+    #flag-image {
+         height:200px;
+         width:200px;
+    }
+}
+
 /*----------LOAD IN MODAL SECTION----------*/
 
 .modal {
