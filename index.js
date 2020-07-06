@@ -29,13 +29,13 @@ function GetFlag() {
 
     //https://www.countryflags.io/ used to get country flag 
     //Create path with the flag selected. 
-    var FlagPath = ('https://www.countryflags.io/' + CountryList[i][1] + '/shiny/64.png');
+    FlagPath = ('https://www.countryflags.io/' + CountryList[i][1] + '/shiny/64.png');
     document.getElementById("flag-image").src = FlagPath;
 
     //Testing 
     console.log("Answer is " + Answer);
     console.log("Country Code is " + CountryList[i][1]);
-    console.log(Flagpath);
+    console.log(FlagPath);
 }
 
 // Time function
