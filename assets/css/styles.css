@@ -157,6 +157,34 @@ body {
     }
 }
 
+/*----------GAME ANSWERS----------*/
+
+#answers-section-width {
+    min-height: 200px;
+}
+
+.answer-buttons {
+    padding: 0px;
+    text-align: center;
+}
+
+.answers {
+    background-color: #8F9E88;
+    color: white;
+    border-radius: 10px;
+    width: 120px;
+    margin: 10px;
+    padding: 5px;
+    height: 120px;
+}
+
+@media only screen and (min-width: 768px) {
+    #answers-section-width {
+        width: 60%;
+        margin: auto;
+    } 
+}
+
 /*----------LOAD IN MODAL SECTION----------*/
 
 .modal {
