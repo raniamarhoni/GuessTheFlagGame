@@ -62,6 +62,11 @@ I've used console.log to check the right outcomes come out.
 I've left testing after each function to make sure all the 
 testing stays correct while building the rest of the game.
 
+While making another function to get the options the user 
+can click, I realised it had an error as it was trying to 
+access an array from another to make it easier i combined the 
+2 functions together as there wasn't a need to seperate it. 
+
 ## Deployment
 
 ## Credits 
