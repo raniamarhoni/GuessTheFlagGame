@@ -157,6 +157,25 @@ body {
     }
 }
 
+/*----------CORRECT OR INCORRECT----------*/
+
+#TruthSection {
+    text-align: center;
+}
+
+.Correct {
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Incorrect {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
 /*----------GAME ANSWERS----------*/
 
 #answers-section-width {

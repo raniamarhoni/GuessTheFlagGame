@@ -6,11 +6,12 @@ function StartGame() {
     $("#Startbtn").remove(); // Remove Start Button
     $("#score-para").append('<p>Score: <span id="score">'+score+'</span></p>'); //Add Score paragraph 
     $("#flag-div").append('<img src="" id="flag-image">'); //Add img in div for flag 
+    $("#TruthSection").append('<p id="Truth"></p>'); // add para to say if answered correctly or not
     //Insert Options selected buttons html
-    $("#button1").append('<button id="option1" class="answers"></button>');
-    $("#button2").append('<button id="option2" class="answers")"></button>');
-    $("#button3").append('<button id="option3" class="answers")"></button>');
-    $("#button4").append('<button id="option4" class="answers")"></button>');
+    $("#button1").append('<button id="option1" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
+    $("#button2").append('<button id="option2" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
+    $("#button3").append('<button id="option3" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
+    $("#button4").append('<button id="option4" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     // StartTimer();  Start Timer function 
     GetFlagAndOptions(); // Run GetFlagAndOptions Function
 }
@@ -78,6 +79,24 @@ function GetFlagAndOptions() {
     console.log("Option 4 = " + (CountryList[(AnswerOptions[3])][0]))
 
 }
+
+//When option is selected update score and go to next question 
+function NextQuestion(AnswerClicked) {
+    //If answer is correct or not 
+    if (AnswerClicked === Answer) {
+        //If correct
+        score++; // Add a point to the score
+        document.getElementById("score").textContent = score; // Update score on screen
+        $("#Truth").removeClass().addClass('Correct') // Change class to change color to green
+        document.getElementById("Truth").innerHTML = "Correct" // Write Correct on screen
+
+    } else { 
+        $("#Truth").removeClass().addClass('Incorrect')// Change class to change color to red
+        document.getElementById("Truth").innerHTML = "Incorrect" // Write Incorrect on screen
+    }
+    GetFlagAndOptions(); //do anther question
+}
+
 
 // Time function
 function StartTimer() {
