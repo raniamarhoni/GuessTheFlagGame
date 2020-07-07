@@ -1,3 +1,5 @@
+var FlagNumbersUsed = [];
+
 // function start game
 function StartGame() { 
     score = 0; // make score zero 
@@ -10,12 +12,13 @@ function StartGame() {
     $("#button3").append('<button id="option3" class="answers")"></button>');
     $("#button4").append('<button id="option4" class="answers")"></button>');
     // StartTimer();  Start Timer function 
-    GetFlag(); // Run GetFlag Function
-    GetOptions() //Run GetOptions Function
+    GetFlagAndOptions(); // Run GetFlagAndOptions Function
 }
 
-function GetFlag() {
+// Get Flag and Options for user to pick from and display
+function GetFlagAndOptions() {
     var AnswerOptions = []; //empty all answer when making a question
+
     //Pick random number within the length of CountryList Array
     //Check if the number has already been used (All used numbers in flagnumbersused array)
     //If the number has been used go again until number hasn't 
@@ -40,9 +43,7 @@ function GetFlag() {
     console.log("Answer is " + Answer);
     console.log("Country Code is " + CountryList[i][1]);
     console.log(FlagPath);
-}
 
-function GetOptions() {
     var OtherFlagOptions = [] // empty all other flag options before getting new ones
     //Loop until there are 4 options in the (AnswerOptions) array
     do {  
