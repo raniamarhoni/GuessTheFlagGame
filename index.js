@@ -1,4 +1,5 @@
 var FlagNumbersUsed = [];
+var highscore = 0;
 
 // function start game
 function StartGame() { 
@@ -12,6 +13,8 @@ function StartGame() {
     $("#button2").append('<button id="option2" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     $("#button3").append('<button id="option3" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     $("#button4").append('<button id="option4" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
+    //Add High Score Section
+    $("#HighScoreSection").append('<p id="HighScoreUnit">High Score: <span id="HighScore">'+highscore+'</span></p>');
     startTimerControls(30, document.querySelector("#timer")); // 
     GetFlagAndOptions(); // Run GetFlagAndOptions Function
 }
@@ -142,10 +145,16 @@ function startTimerControls(duration, timerDisplay) {
 }
 
 function EndGame() {
-    //UpdateHighScore();
+    UpdateHighScore();
     document.getElementById("cover-game").style.display = "initial"; // show style to cover the game
     $("#FinalScoreSection").append('<h4 id="FinalScore">You Scored:<br>'+score+'</h4>'); // Add Score
     $("#PlayAgain-section").append('<button id="PlayAgainBtn" onclick="ReplayGame()">Play Again</button>'); // Add play again button
+}
+
+function UpdateHighScore() {
+    if (highscore < score) {
+        highscore = score
+    }
 }
 
 function ReplayGame() {
@@ -160,6 +169,7 @@ function ReplayGame() {
     $("#option2").remove();
     $("#option3").remove();
     $("#option4").remove();
+    $("#HighScoreUnit").remove();
     $(".startbtn-section").append('<button type="button" id="Startbtn" onclick="StartGame()">Start</button>')
 }
 

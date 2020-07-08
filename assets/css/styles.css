@@ -204,6 +204,16 @@ body {
     } 
 }
 
+/*----------HIGH SCORE----------*/
+
+#HighScoreSection {
+    text-align: center;
+}
+
+#HighScoreUnit {
+    font-size: 1em;
+}
+
 /*----------FINSHED GAME----------*/
 
 #cover-game {
