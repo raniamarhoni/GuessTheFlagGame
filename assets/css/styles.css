@@ -322,6 +322,11 @@ body {
     font-family: sans-serif;
 }
 
+.modal-title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
 .modal-body {
     font-size: 20px;
 }
@@ -336,5 +341,5 @@ body {
 }
 
 .modal-subtitle {
-    font-size: 26px;
+    font-weight: bold;
 }
