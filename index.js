@@ -4,7 +4,7 @@ var FlagNumbersUsed = [];
 function StartGame() { 
     score = 0; // make score zero 
     $("#Startbtn").remove(); // Remove Start Button
-    $("#score-para").append('<p>Score: <span id="score">'+score+'</span></p>'); //Add Score paragraph 
+    $("#score-para").append('<p id="Score-Unit">Score: <span id="score">'+score+'</span></p>'); //Add Score paragraph 
     $("#flag-div").append('<img src="" id="flag-image">'); //Add img in div for flag 
     $("#TruthSection").append('<p id="Truth"></p>'); // add para to say if answered correctly or not
     //Insert Options selected buttons html
@@ -117,7 +117,7 @@ function startTimerControls(duration, timerDisplay) {
             timer = duration;
         }
 
-        //if timer runs out, calls endGame to end the game
+        //if timer runs out, calls EndGame to end the game
         if (timesRan === 31) {
             EndGame();
             clearInterval(interval);
@@ -127,14 +127,24 @@ function startTimerControls(duration, timerDisplay) {
 
 function EndGame() {
     //UpdateHighScore();
-    console.log("hello");
-    document.getElementById("cover-game").style.display = "initial";
-    $("#FinalScoreSection").append('<h4 id="FinalScore">You Scored:<br>'+score+'</h4>');
-    $("#PlayAgain-section").append('<Button id="PlayAgainBtn" onclick="ReplayGame()">Play Again</Button>');
+    document.getElementById("cover-game").style.display = "initial"; // show style to cover the game
+    $("#FinalScoreSection").append('<h4 id="FinalScore">You Scored:<br>'+score+'</h4>'); // Add Score
+    $("#PlayAgain-section").append('<button id="PlayAgainBtn" onclick="ReplayGame()">Play Again</button>'); // Add play again button
 }
 
 function ReplayGame() {
-
+    document.getElementById("cover-game").style.display = "none";
+    $("#FinalScore").remove();
+    $("#PlayAgainBtn").remove();
+    $("#Score-Unit").remove();
+    $("#timer").empty();
+    $("#flag-image").remove();
+    $("#Truth").remove();
+    $("#option1").remove();
+    $("#option2").remove();
+    $("#option3").remove();
+    $("#option4").remove();
+    $(".startbtn-section").append('<button type="button" id="Startbtn" onclick="StartGame()">Start</button>')
 }
 
 // Modal on page load 
