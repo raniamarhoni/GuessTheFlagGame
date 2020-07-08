@@ -20,14 +20,23 @@ function StartGame() {
 function GetFlagAndOptions() {
     var AnswerOptions = []; //empty all answer when making a question
 
+    //Testing if length is 10. 9 should be selected
+    //var FlagNumbersUsed = [0,1,2,3,4,5,6,7,8];
+    //Testing to check which options are picked 6,7,8,9 should show
+    //var FlagNumbersUsed = [0,1,2,3,4,5];
+
     //Pick random number within the length of CountryList Array
     //Check if the number has already been used (All used numbers in flagnumbersused array)
     //If the number has been used go again until number hasn't 
     do {
         i = Math.floor(Math.random() * CountryList.length);
+        // TEST i = Math.floor(Math.random() * 10);
         var FlagNumber = FlagNumbersUsed.includes(i);
+        //TEST console.log(i)
+        //TEST console.log(FlagNumber)
     }
     while (FlagNumber === true);
+    //TEST console.log(i + " has been chosen")
 
     //Store Answer and put answer in the options (AnswerOptions)
     //Also Store answer in FlagNumbersUsed so we don't get the same queston twice
@@ -41,9 +50,9 @@ function GetFlagAndOptions() {
     document.getElementById("flag-image").src = FlagPath;
 
     //Testing 
-    console.log("Answer is " + Answer);
-    console.log("Country Code is " + CountryList[i][1]);
-    console.log(FlagPath);
+    //console.log("Answer is " + Answer);
+    //console.log("Country Code is " + CountryList[i][1]);
+    //console.log(FlagPath);
 
     var OtherFlagOptions = [] // empty all other flag options before getting new ones
     //Loop until there are 4 options in the (AnswerOptions) array
@@ -51,16 +60,23 @@ function GetFlagAndOptions() {
         //loop until you have a number that wasn't a preivous answer and isn't on the options twice
         do {
             i = Math.floor(Math.random() * CountryList.length);
+            //i = Math.floor(Math.random() * 10);
             var FlagNumber = FlagNumbersUsed.includes(i);
             var FlagOtherNumbers = OtherFlagOptions.includes(i);
+            OtherFlagOptions.push(i);
+            //console.log(i);
+            //console.log(FlagNumber);
+            //console.log(FlagOtherNumbers)
+
         }
         while (FlagNumber === true || FlagOtherNumbers === true); 
         AnswerOptions.push(i)
+        //console.log(i + " is a option")
     }
     while(AnswerOptions.length < 4);
 
     //Testing
-    console.log(AnswerOptions);
+    //console.log(AnswerOptions);
 
     // Sort all the options so the answer is not always the first option 
     AnswerOptions.sort(); 
@@ -72,11 +88,11 @@ function GetFlagAndOptions() {
     document.getElementById("option4").innerHTML = (CountryList[(AnswerOptions[3])][0])
 
     //Testing
-    console.log(AnswerOptions);
-    console.log("Option 1 = " + (CountryList[(AnswerOptions[0])][0]))
-    console.log("Option 2 = " + (CountryList[(AnswerOptions[1])][0]))
-    console.log("Option 3 = " + (CountryList[(AnswerOptions[2])][0]))
-    console.log("Option 4 = " + (CountryList[(AnswerOptions[3])][0]))
+    //console.log(AnswerOptions);
+    //console.log("Option 1 = " + (CountryList[(AnswerOptions[0])][0]))
+    //console.log("Option 2 = " + (CountryList[(AnswerOptions[1])][0]))
+    //console.log("Option 3 = " + (CountryList[(AnswerOptions[2])][0]))
+    //console.log("Option 4 = " + (CountryList[(AnswerOptions[3])][0]))
 
 }
 

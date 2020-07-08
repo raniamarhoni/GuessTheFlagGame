@@ -67,6 +67,17 @@ can click, I realised it had an error as it was trying to
 access an array from another to make it easier i combined the 
 2 functions together as there wasn't a need to seperate it. 
 
+When I got family members to test the game someone told me 
+the same country came twice in the options. To double check this 
+I changed the length to 10 on the array instead of the countrylist 
+length and saw it happen. Then I doubled checked the same flag comes 
+up twice which it didn't so it passed. To check the same options 
+won't come up twice I made sure the first question can only have 6,7,8,9 
+in the array as the only options. I saw the other options wasn't been stored 
+in the OtherFlagOptions array so the array was always empty therfor 
+the same option will come up twice. I therfor made sure it will be 
+pushed in the array and checked which then passed the test. 
+
 ## Deployment
 
 ## Credits 
