@@ -12,7 +12,7 @@ function StartGame() {
     $("#button2").append('<button id="option2" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     $("#button3").append('<button id="option3" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     $("#button4").append('<button id="option4" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
-    // StartTimer();  Start Timer function 
+    startTimerControls(30, document.querySelector("#timer")); // 
     GetFlagAndOptions(); // Run GetFlagAndOptions Function
 }
 
@@ -97,9 +97,44 @@ function NextQuestion(AnswerClicked) {
     GetFlagAndOptions(); //do anther question
 }
 
+//Timer 
+function startTimerControls(duration, timerDisplay) {
+    let timer = duration,
+        minutes, seconds;
+    let timesRan = 0;
+    let interval = setInterval(function () {
+        timesRan += 1;
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-// Time function
-function StartTimer() {
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        timerDisplay.textContent = minutes + ":" + seconds;
+
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+
+        //if timer runs out, calls endGame to end the game
+        if (timesRan === 31) {
+            EndGame();
+            clearInterval(interval);
+        }
+    }, 1000);
+}
+
+function EndGame() {
+    //UpdateHighScore();
+    console.log("hello");
+    document.getElementById("cover-game").style.display = "initial";
+    $("#FinalScoreSection").append('<h4 id="FinalScore">You Scored:<br>'+score+'</h4>');
+    $("#PlayAgain-section").append('<Button id="PlayAgainBtn" onclick="ReplayGame()">Play Again</Button>');
+}
+
+function ReplayGame() {
+
 }
 
 // Modal on page load 

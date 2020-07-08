@@ -132,7 +132,7 @@ body {
 @media (min-width: 992px) {
     #score-section {
         font-size: 2em;
-    }
+    } 
 
     #timer {
         font-size: 2em;
@@ -202,6 +202,41 @@ body {
         width: 60%;
         margin: auto;
     } 
+}
+
+/*----------FINSHED GAME----------*/
+
+#cover-game {
+    position: absolute;
+    background-color: rgb(255, 255, 255, 0.9);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#FinalScore {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 20%;
+}
+
+#PlayAgain-section {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 60%;
+}
+
+#PlayAgainBtn {
+    background-color: #8F9E88;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 2em;
 }
 
 /*----------LOAD IN MODAL SECTION----------*/
