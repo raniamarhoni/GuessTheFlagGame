@@ -139,5 +139,6 @@ function ReplayGame() {
 
 // Modal on page load 
 function loadModal() {
+    document.getElementById("cover-game").style.display = "none";
     $('#Modal').modal('show');
 }
