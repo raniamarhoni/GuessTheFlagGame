@@ -43,6 +43,9 @@ body {
     .header {
         font-size: 4em;
     }
+    .description {
+        font-size: 2em
+    }
 }
 
 /*----------GAME BACKGROUND----------*/
@@ -66,7 +69,6 @@ body {
 @media (min-width: 992px) {
     .game-section {
         max-width: 800px;
-        min-height: 800px;
     }
 }
 
@@ -83,7 +85,7 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-size: 1em;
+    font-size: 2.5em;
 }
 
 @media (min-width: 768px) {
@@ -167,19 +169,39 @@ body {
     color: green;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 1em;
 }
 
 .Incorrect {
     color: red;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 1em;
 }
 
+@media (min-width: 768px) {
+    .Correct {
+        font-size: 1.5em
+    }
+    .Incorrect {
+        font-size: 1.5em
+    }
+}
+
+@media (min-width: 992px) {
+    .Correct {
+        font-size: 2em
+    }
+    .Incorrect {
+        font-size: 2em
+    }
+}
 
 /*----------GAME ANSWERS----------*/
 
 #answers-section-width {
     min-height: 200px;
+    margin: auto;
 }
 
 .answer-buttons {
@@ -191,27 +213,48 @@ body {
     background-color: #8F9E88;
     color: white;
     border-radius: 10px;
-    width: 120px;
+    width: 130px;
     margin: 10px;
     padding: 5px;
     height: 120px;
+    font-size: 1em;
 }
 
-@media only screen and (min-width: 768px) {
-    #answers-section-width {
-        width: 60%;
-        margin: auto;
-    } 
+@media (min-width: 768px) {
+    .answers {
+        width: 280px;
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 992px) {
+    .answers {
+        width: 350px;
+        font-size: 2em;
+    }
 }
 
 /*----------HIGH SCORE----------*/
 
 #HighScoreSection {
+    padding: 10px;
     text-align: center;
 }
 
 #HighScoreUnit {
     font-size: 1em;
+}
+
+@media (min-width: 768px) {
+    #HighScoreUnit {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 992px) {
+    #HighScoreUnit {
+        font-size: 2em;
+    } 
 }
 
 /*----------FINSHED GAME----------*/
@@ -232,6 +275,7 @@ body {
     text-align: center;
     width: 100%;
     top: 20%;
+    font-size: 2.5em;
 }
 
 #PlayAgain-section {
@@ -246,7 +290,27 @@ body {
     color: white;
     border-radius: 10px;
     padding: 20px;
-    font-size: 2em;
+    font-size: 2.5em;
+}
+
+@media (min-width: 768px) {
+    #FinalScore {
+        font-size: 3.5em;
+    }
+
+    #PlayAgainBtn {
+        font-size: 3.5em;
+    }
+}
+
+@media (min-width: 992px) {
+    #FinalScore {
+        font-size: 4em;
+    }
+
+    #PlayAgainBtn {
+        font-size: 4em;
+    }
 }
 
 /*----------LOAD IN MODAL SECTION----------*/
