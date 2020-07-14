@@ -32,9 +32,13 @@ Also, to divide them in section such as Europe, Africa where people can play the
 
 ## Technologies Used
 1.JavaScript
+
 2.jQuery
+
 3.HTML
+
 4.CSS
+
 5.Bootstrap  
    
 ## Testing 
