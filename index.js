@@ -1,5 +1,9 @@
 var FlagNumbersUsed = [];
 var highscore = 0;
+var score = 0;
+var FlagNumber;
+var FlagOtherNumbers;
+var Answer;
 
 // function start game
 function StartGame() { 
@@ -34,7 +38,7 @@ function GetFlagAndOptions() {
     do {
         i = Math.floor(Math.random() * CountryList.length);
         // TEST i = Math.floor(Math.random() * 10);
-        var FlagNumber = FlagNumbersUsed.includes(i);
+        FlagNumber = FlagNumbersUsed.includes(i);
         //TEST console.log(i)
         //TEST console.log(FlagNumber)
     }
@@ -49,7 +53,7 @@ function GetFlagAndOptions() {
 
     //https://www.countryflags.io/ used to get country flag 
     //Create path with the flag selected. 
-    FlagPath = ('https://www.countryflags.io/' + CountryList[i][1] + '/shiny/64.png');
+    var FlagPath = ('https://www.countryflags.io/' + CountryList[i][1] + '/shiny/64.png');
     document.getElementById("flag-image").src = FlagPath;
 
     //Testing 
@@ -57,15 +61,15 @@ function GetFlagAndOptions() {
     //console.log("Country Code is " + CountryList[i][1]);
     //console.log(FlagPath);
 
-    var OtherFlagOptions = [] // empty all other flag options before getting new ones
+    var OtherFlagOptions = []; // empty all other flag options before getting new ones
     //Loop until there are 4 options in the (AnswerOptions) array
     do {  
         //loop until you have a number that wasn't a preivous answer and isn't on the options twice
         do {
             i = Math.floor(Math.random() * CountryList.length);
             //i = Math.floor(Math.random() * 10);
-            var FlagNumber = FlagNumbersUsed.includes(i);
-            var FlagOtherNumbers = OtherFlagOptions.includes(i);
+            FlagNumber = FlagNumbersUsed.includes(i);
+            FlagOtherNumbers = OtherFlagOptions.includes(i);
             OtherFlagOptions.push(i);
             //console.log(i);
             //console.log(FlagNumber);
@@ -73,7 +77,7 @@ function GetFlagAndOptions() {
 
         }
         while (FlagNumber === true || FlagOtherNumbers === true); 
-        AnswerOptions.push(i)
+        AnswerOptions.push(i);
         //console.log(i + " is a option")
     }
     while(AnswerOptions.length < 4);
@@ -85,10 +89,10 @@ function GetFlagAndOptions() {
     AnswerOptions.sort(); 
 
     //Add answers in the answer buttons
-    document.getElementById("option1").innerHTML = (CountryList[(AnswerOptions[0])][0])
-    document.getElementById("option2").innerHTML = (CountryList[(AnswerOptions[1])][0])
-    document.getElementById("option3").innerHTML = (CountryList[(AnswerOptions[2])][0])
-    document.getElementById("option4").innerHTML = (CountryList[(AnswerOptions[3])][0])
+    document.getElementById("option1").innerHTML = (CountryList[(AnswerOptions[0])][0]);
+    document.getElementById("option2").innerHTML = (CountryList[(AnswerOptions[1])][0]);
+    document.getElementById("option3").innerHTML = (CountryList[(AnswerOptions[2])][0]);
+    document.getElementById("option4").innerHTML = (CountryList[(AnswerOptions[3])][0]);
 
     //Testing
     //console.log(AnswerOptions);
@@ -106,22 +110,22 @@ function NextQuestion(AnswerClicked) {
         //If correct
         score++; // Add a point to the score
         document.getElementById("score").textContent = score; // Update score on screen
-        $("#Truth").removeClass().addClass('Correct') // Change class to change color to green
-        document.getElementById("Truth").innerHTML = "Correct" // Write Correct on screen
+        $("#Truth").removeClass().addClass('Correct'); // Change class to change color to green
+        document.getElementById("Truth").innerHTML = "Correct"; // Write Correct on screen
 
     } else { 
-        $("#Truth").removeClass().addClass('Incorrect')// Change class to change color to red
-        document.getElementById("Truth").innerHTML = "Incorrect" // Write Incorrect on screen
+        $("#Truth").removeClass().addClass('Incorrect');// Change class to change color to red
+        document.getElementById("Truth").innerHTML = "Incorrect"; // Write Incorrect on screen
     }
     GetFlagAndOptions(); //do anther question
 }
 
 //Timer 
 function startTimerControls(duration, timerDisplay) {
-    let timer = duration,
+    var timer = duration,
         minutes, seconds;
-    let timesRan = 0;
-    let interval = setInterval(function () {
+    var timesRan = 0;
+    var interval = setInterval(function () {
         timesRan += 1;
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -153,7 +157,7 @@ function EndGame() {
 
 function UpdateHighScore() {
     if (highscore < score) {
-        highscore = score
+        highscore = score;
     }
 }
 
@@ -170,7 +174,7 @@ function ReplayGame() {
     $("#option3").remove();
     $("#option4").remove();
     $("#HighScoreUnit").remove();
-    $(".startbtn-section").append('<button type="button" id="Startbtn" onclick="StartGame()">Start</button>')
+    $(".startbtn-section").append('<button type="button" id="Startbtn" onclick="StartGame()">Start</button>');
 }
 
 // Modal on page load 

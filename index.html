@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--FONT LINK-->
 	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
 	<!--BOOTSTRAP LINK-->
@@ -15,22 +16,22 @@
 
 <body onload="loadModal()">
 
-    <!--*******HEADER SECTION*******-->
+	<!--*******HEADER SECTION*******-->
 	<div class="header-section">
 		<h1 class="header">Guess the flag</h1>
 		<p class="description">30 seconds to guess as many flags as possible</p>
 	</div>
 
-    <!--*******GAME*******-->
+	<!--*******GAME*******-->
 	<div class="game-section">
 
-	    <!--*******Start Button*******-->
-        <div class="startbtn-section">
-		    <button type="button" id="Startbtn" onclick="StartGame()">Start</button>
-        </div>
+		<!--*******Start Button*******-->
+		<div class="startbtn-section">
+			<button type="button" id="Startbtn" onclick="StartGame()">Start</button>
+		</div>
 
-        <!--*******SCORE AND TIMER*******-->
-        <div class="game-details row">
+		<!--*******SCORE AND TIMER*******-->
+		<div class="game-details row">
 			<div id="score-section" class="col-6">
 				<div id="score-para"></div>
 			</div>
@@ -39,16 +40,16 @@
 			</div>
 		</div>
 
-        <!--*******FLAG*******-->
-        <div class="flag-section">
+		<!--*******FLAG*******-->
+		<div class="flag-section">
 			<div id="flag-div"></div>
 		</div>
 
-        <!--*******CORRECT OR INCORRECT*******-->
-        <div id="TruthSection"></div>
+		<!--*******CORRECT OR INCORRECT*******-->
+		<div id="TruthSection"></div>
 
-        <!--*******OPTIONS*******-->		
-        <div id="answers-section-width">
+		<!--*******OPTIONS*******-->
+		<div id="answers-section-width">
 			<div class="answers-section row">
 				<div id="button1" class="answer-buttons col-6"></div>
 				<div id="button2" class="answer-buttons col-6"></div>
@@ -57,22 +58,22 @@
 			</div>
 		</div>
 
-        <!--*******HIGH SCORE*******-->
-        <div id="HighScoreSection"></div>
+		<!--*******HIGH SCORE*******-->
+		<div id="HighScoreSection"></div>
 
-        <!--*******Finshed Game*******-->
-        <div id="cover-game">
+		<!--*******Finshed Game*******-->
+		<div id="cover-game">
 			<div id="FinalScoreSection">
-                <!--<h4 class="FinalScore">You Scored:</h4>-->
-            </div>
+				<!--<h4 class="FinalScore">You Scored:</h4>-->
+			</div>
 			<div id="PlayAgain-section">
-                <!--<Button class="PlayAgainBtn">Play Again</Button>-->
-            </div>
+				<!--<Button class="PlayAgainBtn">Play Again</Button>-->
+			</div>
 		</div>
 
-    </div>
+	</div>
 
-    <!--*******MODAL LOAD IN*******-->
+	<!--*******MODAL LOAD IN*******-->
 	<div class="modal fade" tabindex="-1" role="dialog" id='Modal'>
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -93,9 +94,9 @@
 	</div>
 
 
-    <!--*******SCRIPTS*******-->
+	<!--*******SCRIPTS*******-->
 	<script src="index.js"></script>
-    <script src="assets/js/countrylist.js"></script>
+	<script src="assets/js/countrylist.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 	</script>
@@ -106,4 +107,5 @@
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 	</script>
 </body>
+
 </html>
