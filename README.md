@@ -4,14 +4,17 @@ Stream Two Project: Interactive Front-End Development
 This game test your knowledge on country flags. People have 30 seconds to guess the country flag they will have 4 options to pick from. 
 
 ## UX
-I was inspired with the game Quiz: Logo Game which I used to play as a child where you are shown a logo and had to guess the company with the letters there. I wanted todo something similar, so I decided to go with flags and givethe user 4 options to pick from. To make it more interestingI decided to put a timer, so they have 30 seconds to guess as many flags as possible.
+I was inspired with the game Quiz: Logo Game which I used to play as a few years ago where you are shown a logo and had to guess the company with the letters there. I wanted to do something similar, so I decided to go with flags and give the user 4 options to pick from. To make it more interesting I decided to put a timer, so they have 30 seconds to guess as many flags as possible.
 
-The game will keep track of your high score so the user will have something to beat. 
-I wanted to create a minimalistic look so the page would not be too distracting. and the user would be able to focus on the game. 
+The aim was to create a user-friendly minimalist design where users can focus on the game and enjoy it to the full extent without any distractions. Giving the user all the information, they need at the time and all the unnecessary information to be taken out such as the instructions there is a modal in the beginning to explain the game, so they know how to play as soon as they get on the page. There is also a brief description on top of the game. 
 
-I used adobe XD to decide the design here is the [design](https://github.com/raniamarhoni/GuessTheFlagGame/blob/f2ca1ea5b6c6cf5621ee7e22341138bf28aef229/assets/design/Game.xd)
+I wanted to create a minimalistic look so the page would not be too distracting so the user would be able to focus on the game. I decided to go with a green background as it associates with nature and earth. The colour scheme is green, white, and black making sure all of it is visible when it is needed. 
 
-I included a modal which explains the game, so they know how to play as soon as theyget on the page. There is also a small description on top of the game. 
+I wanted the user to be able to click start to start the game and not when they get rid of the instructions so people can prepare also the same when people decide to click play again they get another chance to prepare to focus on the game. 
+ 
+With Adobe XD I was able to come up with a Skelton for phone, tablet and webpage see[design.](https://github.com/raniamarhoni/GuessTheFlagGame/blob/f2ca1ea5b6c6cf5621ee7e22341138bf28aef229/assets/design/Game.xd) I used Adobe XD to come up with a skeleton for the game and come up with a design at the same time 
+
+The game will keep track of your high score so the user will have something to beat to make sure they stay playing the game. 
 
 ## How to play
 You have 30 seconds to guess whose flag it is. You have 4 options to pick from. 
@@ -22,13 +25,15 @@ There is a timing function which is set for 30 seconds. When the timer runs out 
 Flags are obtained by https://www.countryflags.io/ and an array put into another JavaScript file ([Countryflags](https://github.com/raniamarhoni/GuessTheFlagGame/blob/afc44a844d84f94245770742e9acd3d3095fba1e/assets/js/countrylist.js)).
 This will help the game to have access to lots of flags but also be able to decide which flags can show. 
 
-Each question is random it will never be the same questionnaire for everyone. This is done by having an array of countries to be the answers and options and then having the answer selected by random to avoid the answer coming up in the same option box the options are sorted. 
+Each question is random it will never be the same questionnaire for everyone. This is done by having an array of countries to be the answers and options and then having the answer and options selected by random but making sure the answer does not come up twice and none of the previous answers are shown in the next questions so they know what to avoid if they got that question correct.  
 
 ### Features left to Implement
 
 I would like to do a global high score to create competition. 
 
 Also, to divide them in section such as Europe, Africa where people can play the same game but dedicated to continents. 
+
+As there are so many flags, I want to add different variations of the game like you keep going until you get a question wrong or have different timers such as 60 seconds or 120 seconds. I want the user to have different games to pick from when opening the webpage.
 
 ## Technologies Used
 1.JavaScript
@@ -42,7 +47,7 @@ Also, to divide them in section such as Europe, Africa where people can play the
 5.Bootstrap  
    
 ## Testing 
-I have used console.log to check the right outcomes come out. I have left testing after each function to make sure all the testing stays correct while building the rest of the game. 
+I have used console.log to check the right outcomes come out. I have left testing after each function where possible to make sure all the testing stays correct while building the rest of the game. 
 
 While making another function to get the options the user can click, I realised it had an error as it was trying to access an array from another to make it easier I combined the 2 functions together as there was not a need to separate it. 
 
@@ -51,12 +56,16 @@ When I got family members to test the game someone told me the same country came
 All the coding has been put though a validator HTML, CSS, and JavaScript to make sure all errors found was fixed and no errors were uploaded. 
 
 ## Deployment
-
+This site uses GitHub pages, deployed directly from the master branch. For the site to deploy correctly on GitHub pages, the landing page must be named index.html. When a new commit is done it will update automatically to the master branch.
+To run locally, you can clone this repository directly into the editor of your choice by pasting git clone https://github.com/raniamarhoni/GuessTheFlagGame into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
+To open the game the link is https://raniamarhoni.github.io/GuessTheFlagGame/
 ## Credits 
 
 ### Contents
+All contents in this site was written by me.
 
 ### Media 
+All flags are from https://www.countryflags.io/ 
 
 ### Acknowledgements 
- 
+The startTimerControls function was taken from the game https://github.com/hschafer2017/Stream-Two-Project 
