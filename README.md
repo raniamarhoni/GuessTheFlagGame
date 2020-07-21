@@ -16,6 +16,10 @@ With Adobe XD I was able to come up with a Skelton for phone, tablet and webpage
 
 The game will keep track of your high score so the user will have something to beat to make sure they stay playing the game. 
 
+During building the game I saw a few things that was not consistent in the design as the border-radius of everything had a border radius of 10px expect the game background which I later changed to have a consistent style throughout the game.
+
+Unfortunately, while trying to get flags I did not find a way to get flags that are bigger than 64px. Therefore, the flags will need to be stretched making them blurry. 
+
 ## How to play
 You have 30 seconds to guess whose flag it is. You have 4 options to pick from. 
 
@@ -65,7 +69,7 @@ To open the game the link is https://raniamarhoni.github.io/GuessTheFlagGame/
 All contents in this site was written by me.
 
 ### Media 
-All flags are from https://www.countryflags.io/ 
+All flags are from https://www.countryflags.io/ see [license](https://github.com/raniamarhoni/GuessTheFlagGame/blob/3a44d7e4bb9e338a4316b56adcf76933deee9f99/assets/Licenses/CountryFlags.txt)
 
 ### Acknowledgements 
 The startTimerControls function was taken from the game https://github.com/hschafer2017/Stream-Two-Project 
