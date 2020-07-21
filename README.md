@@ -60,9 +60,12 @@ When I got family members to test the game someone told me the same country came
 All the coding has been put though a validator HTML, CSS, and JavaScript to make sure all errors found was fixed and no errors were uploaded. 
 
 ## Deployment
-This site uses GitHub pages, deployed directly from the master branch. For the site to deploy correctly on GitHub pages, the landing page must be named index.html. When a new commit is done it will update automatically to the master branch.
-To run locally, you can clone this repository directly into the editor of your choice by pasting git clone https://github.com/raniamarhoni/GuessTheFlagGame into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
-To open the game the link is https://raniamarhoni.github.io/GuessTheFlagGame/
+To site uses GitHub pages to deploy the site,  I went within the setting tab on GitHub within the options tab I scrolled down to GitHub pages and with source I selected Master Branch and clicked save to host the site. For this to work the landing page must be named index.html. When a new commit is done on the repository it will automatically update to the master branch 
+
+To run the code locally, you can clone this repository directly into the editor of your choice by pasting (git clone https://github.com/raniamarhoni/GuessTheFlagGame) into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
+
+If you need more information to clone the repository use this link https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository. 
+
 ## Credits 
 
 ### Contents
