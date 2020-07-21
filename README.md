@@ -12,7 +12,7 @@ I wanted to create a minimalistic look so the page would not be too distracting 
 
 I wanted the user to be able to click start to start the game and not when they get rid of the instructions so people can prepare also the same when people decide to click play again they get another chance to prepare to focus on the game. 
  
-With Adobe XD I was able to come up with a Skelton for phone, tablet and webpage see[design.](https://github.com/raniamarhoni/GuessTheFlagGame/blob/f2ca1ea5b6c6cf5621ee7e22341138bf28aef229/assets/design/Game.xd) I used Adobe XD to come up with a skeleton for the game and come up with a design at the same time 
+With Adobe XD I was able to come up with a Skelton for phone, tablet and webpage see [design.](https://github.com/raniamarhoni/GuessTheFlagGame/blob/ea40b9ffffb597451d5859b6cca7b610fdbc7ce8/assets/design/GuessTheflagDesign.pdf) I used Adobe XD to come up with a skeleton for the game and come up with a design at the same time.
 
 The game will keep track of your high score so the user will have something to beat to make sure they stay playing the game. 
 
