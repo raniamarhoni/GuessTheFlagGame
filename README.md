@@ -59,6 +59,8 @@ When I got family members to test the game someone told me the same country came
 
 All the coding has been put though a validator HTML, CSS, and JavaScript to make sure all errors found was fixed and no errors were uploaded. 
 
+As the high score is added to the local storage I wanted to put zero if it hasn’t been added to the local storage yet and update it as you play so when you start the game it has a if function to check if it’s in the local storage and adds it if it’s not. To test this, I deleted it from the local storage by right clicking on the screen and going to inspect then going on the application tab, Once on the application tab I can see what is on the local storage and delete it when the high score is deleted and the page is refreshed to see if the high score will say 0 before if displays it. 
+
 ## Deployment
 To site uses GitHub pages to deploy the site,  I went within the setting tab on GitHub within the options tab I scrolled down to GitHub pages and with source I selected Master Branch and clicked save to host the site. For this to work the landing page must be named index.html. When a new commit is done on the repository it will automatically update to the master branch 
 

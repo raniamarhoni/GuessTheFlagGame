@@ -1,5 +1,5 @@
 var FlagNumbersUsed = [];
-var highscore = 0;
+var highscore = localStorage.getItem("highscore");
 var score = 0;
 var FlagNumber;
 var FlagOtherNumbers;
@@ -7,6 +7,11 @@ var Answer;
 
 // function start game
 function StartGame() { 
+    // If Highscore is not in localStorage add it and put 0
+    if(window.localStorage.getItem("highscore") === null){
+        window.localStorage.setItem("highscore", "0"); 
+        highscore = localStorage.getItem("highscore");
+    }
     score = 0; // make score zero 
     $("#Startbtn").remove(); // Remove Start Button
     $("#score-para").append('<p id="Score-Unit">Score: <span id="score">'+score+'</span></p>'); //Add Score paragraph 
@@ -157,7 +162,9 @@ function EndGame() {
 
 function UpdateHighScore() {
     if (highscore < score) {
-        highscore = score;
+        window.localStorage.setItem("highscore", score.toString());
+        highscore = localStorage.getItem("highscore");
+        //console.log("highscore is " + highscore)
     }
 }
 
