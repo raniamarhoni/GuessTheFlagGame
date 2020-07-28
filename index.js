@@ -1,16 +1,23 @@
 var FlagNumbersUsed = [];
-var highscore = localStorage.getItem("highscore");
+var highscore30 = localStorage.getItem("highscore30");
+var highscore60 = localStorage.getItem("highscore60");
 var score = 0;
 var FlagNumber;
 var FlagOtherNumbers;
 var Answer;
+var gamesecs;
 
 // function start game
 function StartGame() { 
     // If Highscore is not in localStorage add it and put 0
-    if(window.localStorage.getItem("highscore") === null){
-        window.localStorage.setItem("highscore", "0"); 
-        highscore = localStorage.getItem("highscore");
+    if(window.localStorage.getItem("highscore30") === null){
+        window.localStorage.setItem("highscore30", "0"); 
+        highscore30 = localStorage.getItem("highscore30");
+    }
+    
+    if(window.localStorage.getItem("highscore60") === null){
+        window.localStorage.setItem("highscore60", "0"); 
+        highscore60 = localStorage.getItem("highscore60");
     }
     score = 0; // make score zero 
     //$("#seconds-select").remove(); // Remove Start Button
@@ -23,8 +30,15 @@ function StartGame() {
     $("#button3").append('<button id="option3" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     $("#button4").append('<button id="option4" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     //Add High Score Section
-    $("#HighScoreSection").append('<p id="HighScoreUnit">High Score: <span id="HighScore">'+highscore+'</span></p>');
-    startTimerControls(document.getElementById("timer-form").elements.seconds.value, document.querySelector("#timer")); // 
+
+    var highscoretext = '<div id="HighScoreText"><p id="HighScoreHeader">High Score:</p><div class="row"><div class="col-6"><p id="HighScore-30-section">30 Seconds: <span id="HighScore-30">'+highscore30 +'</span></p></div><div class="col-6"><p id="HighScore-60-section">60 Seconds: <span id="HighScore-60">'+ highscore60 +'</span></p></div></div></div>';
+    $("#HighScoreSection").append(highscoretext);
+
+
+    //$("#HighScoreSection").append('<p id="HighScoreUnit">High Score: <span id="HighScore">'+highscore30 +'</span></p>');
+    gamesecs = document.getElementById("timer-form").elements.seconds.value
+    console.log(gamesecs);
+    startTimerControls(Number(gamesecs), document.querySelector("#timer")); // 
     $("#timer-form").remove(); // Remove timer options and start button form
     GetFlagAndOptions(); // Run GetFlagAndOptions Function
 }
@@ -158,21 +172,34 @@ function startTimerControls(duration, timerDisplay) {
 function EndGame() {
     UpdateHighScore();
     document.getElementById("cover-game").style.display = "initial"; // show style to cover the game
-    $("#FinalScoreSection").append('<h4 id="FinalScore">You Scored:<br>'+score+'</h4>'); // Add Score
+    //$("#FinalScoreSection").append('<h4 id="FinalScore">You Scored:<br>'+score+'</h4>'); // Add Score
+    //var ScoresDisplay = '<div class="ScoresDisplayed"><h4 id="FinalScore">You Scored: '+score+ '</h4><div class="highscoreshow"><p>High Scores:</p><p>30 Seconds: '+highscore30+ '</p><p>60 Seconds: '+highscore60+ '</p></div></div>';
+    
+    var ScoresDisplay = '<div id="ScoresDisplayed"><h4 id="FinalScore">You Scored: '+score+ '</h4><div class="highscoreshow"><p>High Scores:</p><p>30 Seconds: '+highscore30+ '</p><p>60 Seconds: '+highscore60+ '</p></div></div>';
+    
+    $("#FinalScoreSection").append(ScoresDisplay); // Add Score
     $("#PlayAgain-section").append('<button id="PlayAgainBtn" onclick="ReplayGame()">Play Again</button>'); // Add play again button
 }
 
 function UpdateHighScore() {
-    if (highscore < score) {
-        window.localStorage.setItem("highscore", score.toString());
-        highscore = localStorage.getItem("highscore");
-        //console.log("highscore is " + highscore)
+    if (Number(gamesecs) === 30) {
+        if (highscore30 < score) {
+            window.localStorage.setItem("highscore30", score.toString());
+            highscore30 = localStorage.getItem("highscore30");
+            //console.log("highscore30 is " + highscore30)
+        }
+    } else if (Number(gamesecs) === 60) {
+        if (highscore60 < score) {
+            window.localStorage.setItem("highscore60", score.toString());
+            highscore60 = localStorage.getItem("highscore60");
+            //console.log("highscore60 is " + highscore60)
+        }
     }
 }
 
 function ReplayGame() {
     document.getElementById("cover-game").style.display = "none";
-    $("#FinalScore").remove();
+    $("#ScoresDisplayed").remove();
     $("#PlayAgainBtn").remove();
     $("#Score-Unit").remove();
     $("#timer").empty();
@@ -182,7 +209,7 @@ function ReplayGame() {
     $("#option2").remove();
     $("#option3").remove();
     $("#option4").remove();
-    $("#HighScoreUnit").remove();
+    $("#HighScoreText").remove();
     var formtext = '<form id="timer-form"><h3 class="game-instructions-header">Select how many seconds?</h3><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=30 checked/> 30 Seconds</label><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=60 /> 60 Seconds</label><button type="button" id="Startbtn" onclick="StartGame()">Start</button></form>';
     $("#seconds-select").append(formtext);
 }

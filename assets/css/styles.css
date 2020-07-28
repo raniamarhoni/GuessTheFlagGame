@@ -279,22 +279,34 @@ body {
 /*----------HIGH SCORE----------*/
 
 #HighScoreSection {
-    padding: 10px;
+    padding: 5px;
+    font-size: 1em
+}
+
+#HighScoreHeader {
+    margin:0px;
+    padding-bottom: 5px;
     text-align: center;
 }
 
-#HighScoreUnit {
-    font-size: 1em;
+#HighScore-30-section {
+    margin: 0px;
+    text-align: right;
+}
+
+#HighScore-60-section {
+    margin: 0px;
+    text-align: left;
 }
 
 @media (min-width: 768px) {
-    #HighScoreUnit {
+    #HighScoreSection {
         font-size: 1.5em;
     }
 }
 
 @media (min-width: 992px) {
-    #HighScoreUnit {
+    #HighScoreSection {
         font-size: 2em;
     } 
 }
@@ -304,6 +316,8 @@ body {
 #cover-game {
     position: absolute;
     background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 10px;
+    border-width: 0px;
     height: 100%;
     width: 100%;
     top: 0;
@@ -312,19 +326,31 @@ body {
     right: 0;
 }
 
-#FinalScore {
+#FinalScoreSection {
     position: absolute;
-    text-align: center;
     width: 100%;
     top: 20%;
-    font-size: 2.5em;
+    text-align: center;
+}
+
+#FinalScore {
+    font-size: 1.5em;
+    padding-bottom:20px;
+}
+
+.highscoreshow {
+    font-size: 1em;
+}
+
+.highscoreshow p {
+    margin:5px;
 }
 
 #PlayAgain-section {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 60%;
+    top: 65%;
 }
 
 #PlayAgainBtn {
@@ -332,12 +358,20 @@ body {
     color: white;
     border-radius: 10px;
     padding: 20px;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 @media (min-width: 768px) {
     #FinalScore {
-        font-size: 3.5em;
+        font-size: 2.5em;
+    }
+
+    .highscoreshow {
+        font-size: 1.5em;
+    }
+
+    #PlayAgain-section {
+        top: 55%;
     }
 
     #PlayAgainBtn {
@@ -347,7 +381,15 @@ body {
 
 @media (min-width: 992px) {
     #FinalScore {
-        font-size: 4em;
+        font-size: 3em;
+    }
+    
+    .highscoreshow {
+        font-size: 2em;
+    }
+
+    #PlayAgain-section {
+        top: 65%;
     }
 
     #PlayAgainBtn {
