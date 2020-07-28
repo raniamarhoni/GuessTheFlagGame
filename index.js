@@ -26,6 +26,7 @@ function StartGame() {
 
     // Have selected timer set and start form removed
     gamesecs = document.getElementById("timer-form").elements.seconds.value;
+    console.log(gamesecs);
     startTimerControls(Number(gamesecs), document.querySelector("#timer"));
     $("#timer-form").remove(); 
 
@@ -50,15 +51,25 @@ function StartGame() {
 function GetFlagAndOptions() {
     //Empty all previous options and get flag and add it to the options
     var AnswerOptions = [];
+    //Testing if length is 10. 9 should be selected
+    //var FlagNumbersUsed = [0,1,2,3,4,5,6,7,8];
+    //Testing to check which options are picked 6,7,8,9 should show
+    //var FlagNumbersUsed = [0,1,2,3,4,5];
 
     //It picks a random number within the length of CountryList Array and checks if the number selected has been used before
     //if it has it'll find another number which hasn't and stores it (answer, used flags and answer options)
     do {
         i = Math.floor(Math.random() * CountryList.length);
+        // TEST 
+        //i = Math.floor(Math.random() * 10);
         FlagNumber = FlagNumbersUsed.includes(i);
+        //TEST 
+        //console.log(i)
+        //TEST 
+        //console.log(FlagNumber)
     }
     while (FlagNumber === true);
-
+    //TEST console.log(i + " has been chosen")
     Answer = CountryList[i][0];
     AnswerOptions.push(i);
     FlagNumbersUsed.push(i);
@@ -67,21 +78,34 @@ function GetFlagAndOptions() {
     var FlagPath = ('https://www.countryflags.io/' + CountryList[i][1] + '/shiny/64.png');
     document.getElementById("flag-image").src = FlagPath;
 
+    //Testing 
+    //console.log("Answer is " + Answer);
+    //console.log("Country Code is " + CountryList[i][1]);
+    //console.log(FlagPath);
+
     //Empty other flag options and fill in the answer options until we have 4 in the array 
     //which hasnt been an answer before and sort it so the answer isn't in the same place all the time
     var OtherFlagOptions = []; 
     do {  
         do {
             i = Math.floor(Math.random() * CountryList.length);
+            //i = Math.floor(Math.random() * 10);
             FlagNumber = FlagNumbersUsed.includes(i);
             FlagOtherNumbers = OtherFlagOptions.includes(i);
             OtherFlagOptions.push(i);
+            //console.log(i);
+            //console.log(FlagNumber);
+            //console.log(FlagOtherNumbers)
 
         }
         while (FlagNumber === true || FlagOtherNumbers === true); 
         AnswerOptions.push(i);
+        //console.log(i + " is a option")
     }
     while(AnswerOptions.length < 4);
+
+    //Testing
+    //console.log(AnswerOptions);
     AnswerOptions.sort(); 
 
     //Add answers in the answer buttons
@@ -89,6 +113,13 @@ function GetFlagAndOptions() {
     document.getElementById("option2").innerHTML = (CountryList[(AnswerOptions[1])][0]);
     document.getElementById("option3").innerHTML = (CountryList[(AnswerOptions[2])][0]);
     document.getElementById("option4").innerHTML = (CountryList[(AnswerOptions[3])][0]);
+
+    //Testing
+    //console.log(AnswerOptions);
+    //console.log("Option 1 = " + (CountryList[(AnswerOptions[0])][0]))
+    //console.log("Option 2 = " + (CountryList[(AnswerOptions[1])][0]))
+    //console.log("Option 3 = " + (CountryList[(AnswerOptions[2])][0]))
+    //console.log("Option 4 = " + (CountryList[(AnswerOptions[3])][0]))
 }
 
 //When option is selected update score and go to next question 
