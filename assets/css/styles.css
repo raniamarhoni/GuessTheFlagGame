@@ -73,31 +73,72 @@ body {
     }
 }
 
-/*----------START BUTTON----------*/
-
-#Startbtn {
-    background-color: #8F9E88;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: 0;
+/*----------TIMER OPTION AND START BUTTON FORM----------*/
+#timer-form {
     position: absolute;
+    width: fit-content;
+    max-width: 90%;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-size: 2.5em;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #8F9E88;
+    border: 2px solid black;
+}
+
+.game-instructions-header {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+}
+
+.seconds-text {
+    font-size: 1em;
+    color: white;
+    padding: 5px;
+}
+
+.timer-select {
+    vertical-align: middle;
+}
+
+#Startbtn {
+    background-color: white;
+    color: black;
+    padding: 10px 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
 }
 
 @media (min-width: 768px) {
+    .game-instructions-header {
+        font-size: 1.5em;
+    }
+    .seconds-text {
+        font-size: 1.5em;
+    }
     #Startbtn {
-        font-size: 3.5em
+        font-size: 2.5em;
     }
 }
 
 @media (min-width: 992px) {
+    .game-instructions-header {
+        font-size: 2em;
+    }
+    .seconds-text {
+        font-size: 2em;
+    }
     #Startbtn {
-        font-size: 4em
+        font-size: 3em;
     }
 }
 

@@ -19,16 +19,26 @@
 	<!--*******HEADER SECTION*******-->
 	<div class="header-section">
 		<h1 class="header">Guess the flag</h1>
-		<p class="description">30 seconds to guess as many flags as possible</p>
+		<p class="description">30 or 60 seconds to guess as many flags as possible</p>
 	</div>
 
 	<!--*******GAME*******-->
 	<div class="game-section">
 
-		<!--*******Start Button*******-->
-		<div class="startbtn-section">
-			<button type="button" id="Startbtn" onclick="StartGame()">Start</button>
-		</div>
+		<!--*******Timer Option and Start Button*******-->
+        <div id="seconds-select">
+            <form id="timer-form">
+                <h3 class="game-instructions-header">Select how many seconds?</h3>
+                <label class="seconds-text">
+                    <input type="radio" class="timer-select" name="seconds" id="seconds" value=30 checked/> 30 Seconds
+                </label>
+                <label class="seconds-text">
+                    <input type="radio" class="timer-select" name="seconds" id="seconds" value=60 /> 60 Seconds
+                </label>
+                <button type="button" id="Startbtn" onclick="StartGame()">Start</button>
+            </form>
+        </div>
+
 
 		<!--*******SCORE AND TIMER*******-->
 		<div class="game-details row">
@@ -83,8 +93,8 @@
 				</div>
 				<div class="modal-body">
 					<p class="modal-subtitle">How To Play:</p>
-					<p>You have 30 seconds to guess the country's flag you have 4 options to pick from.</p>
-					<p>Press Start to start the game</p>
+					<p>You have 30 or 60 seconds to guess the country's flag you will have 4 options to pick from.</p>
+					<p>Select how many seconds you want on the timer and click start to start the game</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn modal-btn" data-dismiss="modal">Let's Play!</button>

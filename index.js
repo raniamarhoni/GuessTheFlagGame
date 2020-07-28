@@ -13,7 +13,7 @@ function StartGame() {
         highscore = localStorage.getItem("highscore");
     }
     score = 0; // make score zero 
-    $("#Startbtn").remove(); // Remove Start Button
+    //$("#seconds-select").remove(); // Remove Start Button
     $("#score-para").append('<p id="Score-Unit">Score: <span id="score">'+score+'</span></p>'); //Add Score paragraph 
     $("#flag-div").append('<img src="" id="flag-image">'); //Add img in div for flag 
     $("#TruthSection").append('<p id="Truth"></p>'); // add para to say if answered correctly or not
@@ -24,7 +24,8 @@ function StartGame() {
     $("#button4").append('<button id="option4" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
     //Add High Score Section
     $("#HighScoreSection").append('<p id="HighScoreUnit">High Score: <span id="HighScore">'+highscore+'</span></p>');
-    startTimerControls(30, document.querySelector("#timer")); // 
+    startTimerControls(document.getElementById("timer-form").elements.seconds.value, document.querySelector("#timer")); // 
+    $("#timer-form").remove(); // Remove timer options and start button form
     GetFlagAndOptions(); // Run GetFlagAndOptions Function
 }
 
@@ -146,7 +147,8 @@ function startTimerControls(duration, timerDisplay) {
         }
 
         //if timer runs out, calls EndGame to end the game
-        if (timesRan === 31) {
+        var finish = (Number(duration) + 1);
+        if (timesRan === Number(finish)) {
             EndGame();
             clearInterval(interval);
         }
@@ -181,7 +183,8 @@ function ReplayGame() {
     $("#option3").remove();
     $("#option4").remove();
     $("#HighScoreUnit").remove();
-    $(".startbtn-section").append('<button type="button" id="Startbtn" onclick="StartGame()">Start</button>');
+    var formtext = '<form id="timer-form"><h3 class="game-instructions-header">Select how many seconds?</h3><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=30 checked/> 30 Seconds</label><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=60 /> 60 Seconds</label><button type="button" id="Startbtn" onclick="StartGame()">Start</button></form>';
+    $("#seconds-select").append(formtext);
 }
 
 // Modal on page load 
