@@ -6,6 +6,9 @@ var FlagNumber;
 var FlagOtherNumbers;
 var Answer;
 var gamesecs;
+var i;
+var $;
+var CountryList;
 
 // function start game
 function StartGame() { 
@@ -36,7 +39,7 @@ function StartGame() {
 
 
     //$("#HighScoreSection").append('<p id="HighScoreUnit">High Score: <span id="HighScore">'+highscore30 +'</span></p>');
-    gamesecs = document.getElementById("timer-form").elements.seconds.value
+    gamesecs = document.getElementById("timer-form").elements.seconds.value;
     console.log(gamesecs);
     startTimerControls(Number(gamesecs), document.querySelector("#timer")); // 
     $("#timer-form").remove(); // Remove timer options and start button form
