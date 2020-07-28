@@ -53,7 +53,7 @@ As there are so many flags, I want to add different variations of the game for e
 5.Bootstrap  
    
 ## Testing 
-I have used console.log to check the right outcomes come out. I have left testing after each function where possible to make sure all the testing stays correct while building the rest of the game. It then has been cleared and committed again to avoid confusion on the code.
+I have used console.log to check the right outcomes come out. I have left testing after each function where possible to make sure all the testing stays correct while building the rest of the game. I then cleared the testing when done with the project to avoid confusion on the code while but can revert back to the old commit if i need to test it. 
 
 When I got family members and friends to test the game someone told me the same country came twice in the options. To double check this I changed the length to 10 on the array instead of the countrylist length and saw it happen. Then I doubled checked the same flag comes up twice which it did not, so it passed. To check the same options will not come up twice I made sure the first question can only have 6,7,8,9 in the array as the only options. I saw the other options was not been stored in the OtherFlagOptions array so the array was always empty therefore the same option will come up twice. I therfor made sure it will be pushed in the array and checked which then passed the test. 
 
