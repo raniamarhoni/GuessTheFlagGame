@@ -1,4 +1,4 @@
-var CountryList = [
+var countrylist = [
     ['Afghanistan', 'AF'],
     ['Albania', 'AL'],
     ['Algeria', 'DZ'],

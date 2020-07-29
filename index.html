@@ -14,7 +14,7 @@
 	<title>Guess the Flag</title>
 </head>
 
-<body onload="loadModal()">
+<body onload="loadmodal()">
 
 	<!--*******HEADER SECTION*******-->
 	<div class="header-section">
@@ -35,7 +35,7 @@
 				<label class="seconds-text">
                     <input type="radio" class="timer-select" name="seconds" value=60 /> 60 Seconds
                 </label>
-				<button type="button" id="Startbtn" onclick="StartGame()">Start</button>
+				<button type="button" id="startbtn" onclick="startgame()">Start</button>
 			</form>
 		</div>
 
@@ -56,7 +56,7 @@
 		</div>
 
 		<!--*******CORRECT OR INCORRECT*******-->
-		<div id="TruthSection"></div>
+		<div id="truthsection"></div>
 
 		<!--*******OPTIONS*******-->
 		<div id="answers-section-width">
@@ -69,18 +69,18 @@
 		</div>
 
 		<!--*******HIGH SCORE*******-->
-		<div id="HighScoreSection"></div>
+		<div id="highscoresection"></div>
 
 		<!--*******Finshed Game*******-->
 		<div id="cover-game">
-			<div id="FinalScoreSection"></div>
-			<div id="PlayAgain-section"></div>
+			<div id="finalscoresection"></div>
+			<div id="playagain-section"></div>
 		</div>
 
 	</div>
 
 	<!--*******MODAL LOAD IN*******-->
-	<div class="modal fade" tabindex="-1" role="dialog" id='Modal'>
+	<div class="modal fade" tabindex="-1" role="dialog" id='modal'>
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">

@@ -1,15 +1,15 @@
-var FlagNumbersUsed = [];
+var flagnumbersused = [];
 var highscore30 = localStorage.getItem("highscore30");
 var highscore60 = localStorage.getItem("highscore60");
 var score = 0;
-var FlagNumber;
-var FlagOtherNumbers;
-var Answer;
+var flagnumber;
+var flagothernumbers;
+var answer;
 var gamesecs;
 var i;
 
 // function to Start the Game 
-function StartGame() {
+function startgame() {
     // If the Highscores are not in localStorage add it and put 0 and make score 0
     if(window.localStorage.getItem("highscore30") === null){
         window.localStorage.setItem("highscore30", "0"); 
@@ -24,122 +24,123 @@ function StartGame() {
 
     // Have selected timer set and start form removed
     gamesecs = document.getElementById("timer-form").elements.seconds.value;
-    console.log(gamesecs);
-    startTimerControls(Number(gamesecs), document.querySelector("#timer"));
+    //console.log(gamesecs);
+    starttimercontrols(Number(gamesecs), document.querySelector("#timer"));
     $("#timer-form").remove(); 
 
     //Add Game Sections score, timer, flag, correct/incorrect & options to the game
-    $("#score-para").append('<p id="Score-Unit">Score: <span id="score">'+score+'</span></p>'); 
+    $("#score-para").append('<p id="score-unit">Score: <span id="score">'+score+'</span></p>'); 
     $("#flag-div").append('<img src="" id="flag-image">');
-    $("#TruthSection").append('<p id="Truth"></p>');
-    $("#button1").append('<button id="option1" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
-    $("#button2").append('<button id="option2" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
-    $("#button3").append('<button id="option3" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
-    $("#button4").append('<button id="option4" class="answers" onclick="NextQuestion(this.innerHTML)"></button>');
+    $("#truthsection").append('<p id="truth"></p>');
+    $("#button1").append('<button id="option1" class="answers" onclick="nextquestion(this.innerHTML)"></button>');
+    $("#button2").append('<button id="option2" class="answers" onclick="nextquestion(this.innerHTML)"></button>');
+    $("#button3").append('<button id="option3" class="answers" onclick="nextquestion(this.innerHTML)"></button>');
+    $("#button4").append('<button id="option4" class="answers" onclick="nextquestion(this.innerHTML)"></button>');
     
     //Add High Score Section
-    var highscoretext = '<div id="HighScoreText"><p id="HighScoreHeader">High Score:</p><div class="row"><div class="col-6"><p id="HighScore-30-section">30 Seconds: <span id="HighScore-30">'+highscore30 +'</span></p></div><div class="col-6"><p id="HighScore-60-section">60 Seconds: <span id="HighScore-60">'+ highscore60 +'</span></p></div></div></div>';
-    $("#HighScoreSection").append(highscoretext);
+    var highscoretext = '<div id="highscoretext"><p id="highscoreheader">High Score:</p><div class="row"><div class="col-6"><p id="highscore-30-section">30 Seconds: <span id="highscore-30">'+highscore30 +'</span></p></div><div class="col-6"><p id="highscore-60-section">60 Seconds: <span id="highscore-60">'+ highscore60 +'</span></p></div></div></div>';
+    $("#highscoresection").append(highscoretext);
 
     // Run function to get flag and options 
-    GetFlagAndOptions(); 
+    getflagandoptions(); 
 }    
 
 // Get Flag and Options for user to pick from and display
-function GetFlagAndOptions() {
+function getflagandoptions() {
     //Empty all previous options and get flag and add it to the options
-    var AnswerOptions = [];
+    var answeroptions = [];
     //Testing if length is 10. 9 should be selected
-    //var FlagNumbersUsed = [0,1,2,3,4,5,6,7,8];
+    //var flagnumbersused = [0,1,2,3,4,5,6,7,8];
     //Testing to check which options are picked 6,7,8,9 should show
-    //var FlagNumbersUsed = [0,1,2,3,4,5];
+    //var flagnumbersused = [0,1,2,3,4,5];
 
     //It picks a random number within the length of CountryList Array and checks if the number selected has been used before
     //if it has it'll find another number which hasn't and stores it (answer, used flags and answer options)
     do {
-        i = Math.floor(Math.random() * CountryList.length);
+        i = Math.floor(Math.random() * countrylist.length);
         // TEST 
         //i = Math.floor(Math.random() * 10);
-        FlagNumber = FlagNumbersUsed.includes(i);
+        flagnumber = flagnumbersused.includes(i);
         //TEST 
-        //console.log(i)
+        //console.log(i);
         //TEST 
-        //console.log(FlagNumber)
+        //console.log(flagnumber);
     }
-    while (FlagNumber === true);
-    //TEST console.log(i + " has been chosen")
-    Answer = CountryList[i][0];
-    AnswerOptions.push(i);
-    FlagNumbersUsed.push(i);
+    while (flagnumber === true);
+    //TEST 
+    //console.log(i + " has been chosen");
+    answer = countrylist[i][0];
+    answeroptions.push(i);
+    flagnumbersused.push(i);
 
     //https://www.countryflags.io/ used to get country flag and reates path to flag
-    var FlagPath = ('https://www.countryflags.io/' + CountryList[i][1] + '/shiny/64.png');
-    document.getElementById("flag-image").src = FlagPath;
+    var flagpath = ('https://www.countryflags.io/' + countrylist[i][1] + '/shiny/64.png');
+    document.getElementById("flag-image").src = flagpath;
 
     //Testing 
-    //console.log("Answer is " + Answer);
-    //console.log("Country Code is " + CountryList[i][1]);
-    //console.log(FlagPath);
+    //console.log("Answer is " + answer);
+    //console.log("Country Code is " + countrylist[i][1]);
+    //console.log(flagpath);
 
     //Empty other flag options and fill in the answer options until we have 4 in the array 
     //which hasnt been an answer before and sort it so the answer isn't in the same place all the time
-    var OtherFlagOptions = []; 
+    var otherflagoptions = []; 
     do {  
         do {
-            i = Math.floor(Math.random() * CountryList.length);
+            i = Math.floor(Math.random() * countrylist.length);
             //i = Math.floor(Math.random() * 10);
-            FlagNumber = FlagNumbersUsed.includes(i);
-            FlagOtherNumbers = OtherFlagOptions.includes(i);
-            OtherFlagOptions.push(i);
+            flagnumber = flagnumbersused.includes(i);
+            flagothernumbers = otherflagoptions.includes(i);
+            otherflagoptions.push(i);
             //console.log(i);
-            //console.log(FlagNumber);
-            //console.log(FlagOtherNumbers)
+            //console.log(flagnumber);
+            //console.log(flagothernumbers);
 
         }
-        while (FlagNumber === true || FlagOtherNumbers === true); 
-        AnswerOptions.push(i);
-        //console.log(i + " is a option")
+        while (flagnumber === true || flagothernumbers === true); 
+        answeroptions.push(i);
+        //console.log(i + " is a option");
     }
-    while(AnswerOptions.length < 4);
+    while(answeroptions.length < 4);
 
     //Testing
-    //console.log(AnswerOptions);
-    AnswerOptions.sort(); 
+    //console.log(answeroptions);
+    answeroptions.sort(); 
 
     //Add answers in the answer buttons
-    document.getElementById("option1").innerHTML = (CountryList[(AnswerOptions[0])][0]);
-    document.getElementById("option2").innerHTML = (CountryList[(AnswerOptions[1])][0]);
-    document.getElementById("option3").innerHTML = (CountryList[(AnswerOptions[2])][0]);
-    document.getElementById("option4").innerHTML = (CountryList[(AnswerOptions[3])][0]);
+    document.getElementById("option1").innerHTML = (countrylist[(answeroptions[0])][0]);
+    document.getElementById("option2").innerHTML = (countrylist[(answeroptions[1])][0]);
+    document.getElementById("option3").innerHTML = (countrylist[(answeroptions[2])][0]);
+    document.getElementById("option4").innerHTML = (countrylist[(answeroptions[3])][0]);
 
     //Testing
-    //console.log(AnswerOptions);
-    //console.log("Option 1 = " + (CountryList[(AnswerOptions[0])][0]))
-    //console.log("Option 2 = " + (CountryList[(AnswerOptions[1])][0]))
-    //console.log("Option 3 = " + (CountryList[(AnswerOptions[2])][0]))
-    //console.log("Option 4 = " + (CountryList[(AnswerOptions[3])][0]))
+    //console.log(answeroptions);
+    //console.log("Option 1 = " + (countrylist[(answeroptions[0])][0]));
+    //console.log("Option 2 = " + (countrylist[(answeroptions[1])][0]));
+    //console.log("Option 3 = " + (countrylist[(answeroptions[2])][0]));
+    //console.log("Option 4 = " + (countrylist[(answeroptions[3])][0]));
 }
 
 //When option is selected update score and go to next question 
-function NextQuestion(AnswerClicked) {
+function nextquestion(answerclicked) {
 
     //If answer is correct add point to score and update and say correct (green) if not say incorrect (red)
-    if (AnswerClicked === Answer) {
+    if (answerclicked === answer) {
         score++;
         document.getElementById("score").textContent = score;
-        $("#Truth").removeClass().addClass('Correct');
-        document.getElementById("Truth").innerHTML = "Correct";
+        $("#truth").removeClass().addClass('correct');
+        document.getElementById("truth").innerHTML = "correct";
     } else { 
-        $("#Truth").removeClass().addClass('Incorrect');
-        document.getElementById("Truth").innerHTML = "Incorrect";
+        $("#truth").removeClass().addClass('incorrect');
+        document.getElementById("truth").innerHTML = "incorrect";
     }
 
     // Fill in the next question function
-    GetFlagAndOptions();
+    getflagandoptions();
 }
 
 //Timer this function was found on https://github.com/hschafer2017/Stream-Two-Project 
-function startTimerControls(duration, timerDisplay) {
+function starttimercontrols(duration, timerdisplay) {
     var timer = duration,
         minutes, seconds;
     var timesRan = 0;
@@ -151,33 +152,33 @@ function startTimerControls(duration, timerDisplay) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        timerDisplay.textContent = minutes + ":" + seconds;
+        timerdisplay.textContent = minutes + ":" + seconds;
 
 
         if (--timer < 0) {
             timer = duration;
         }
 
-        //if timer runs out, calls EndGame to end the game
+        //if timer runs out, calls endgame to end the game
         var finish = (Number(duration) + 1);
         if (timesRan === Number(finish)) {
-            EndGame();
+            endgame();
             clearInterval(interval);
         }
     }, 1000);
 }
 
 //Timer Finshed end game, update and show scores and show play again button
-function EndGame() {
-    UpdateHighScore();
+function endgame() {
+    updatehighscore();
     document.getElementById("cover-game").style.display = "initial";
-    var ScoresDisplay = '<div id="ScoresDisplayed"><h4 id="FinalScore">You Scored: '+score+ '</h4><div class="highscoreshow"><p>High Scores:</p><p>30 Seconds: '+highscore30+ '</p><p>60 Seconds: '+highscore60+ '</p></div></div>';
-    $("#FinalScoreSection").append(ScoresDisplay);
-    $("#PlayAgain-section").append('<button id="PlayAgainBtn" onclick="ReplayGame()">Play Again</button>'); 
+    var ScoresDisplay = '<div id="scoresdisplayed"><h4 id="finalscore">You Scored: '+score+ '</h4><div class="highscoreshow"><p>High Scores:</p><p>30 Seconds: '+highscore30+ '</p><p>60 Seconds: '+highscore60+ '</p></div></div>';
+    $("#finalscoresection").append(ScoresDisplay);
+    $("#playagain-section").append('<button id="playagainbtn" onclick="replaygame()">Play Again</button>'); 
 }
 
 //Update High Scores
-function UpdateHighScore() {
+function updatehighscore() {
 // Check which timer game was played then if score is higher than highscore update on screen and local storage
     if (Number(gamesecs) === 30) {
         if (highscore30 < score) {
@@ -193,27 +194,27 @@ function UpdateHighScore() {
 }
 
 // Replay Game Function
-function ReplayGame() {
+function replaygame() {
     //It stops covering the game and removes all game sections and score and appends timer selection and start form 
     document.getElementById("cover-game").style.display = "none";
-    $("#ScoresDisplayed").remove();
-    $("#PlayAgainBtn").remove();
-    $("#Score-Unit").remove();
+    $("#scoresdisplayed").remove();
+    $("#playagainbtn").remove();
+    $("#score-unit").remove();
     $("#timer").empty();
     $("#flag-image").remove();
-    $("#Truth").remove();
+    $("#truth").remove();
     $("#option1").remove();
     $("#option2").remove();
     $("#option3").remove();
     $("#option4").remove();
-    $("#HighScoreText").remove();
-    var formtext = '<form id="timer-form"><h3 class="game-instructions-header">Select how many seconds?</h3><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=30 checked/> 30 Seconds</label><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=60 /> 60 Seconds</label><button type="button" id="Startbtn" onclick="StartGame()">Start</button></form>';
+    $("#highscoretext").remove();
+    var formtext = '<form id="timer-form"><h3 class="game-instructions-header">Select how many seconds?</h3><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=30 checked/> 30 Seconds</label><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=60 /> 60 Seconds</label><button type="button" id="startbtn" onclick="startgame()">Start</button></form>';
     $("#seconds-select").append(formtext);
 }
 
 //Block the cover game style and show modal
 //Used when coming onto site
-function loadModal() {
+function loadmodal() {
     document.getElementById("cover-game").style.display = "none";
-    $('#Modal').modal('show');
+    $('#modal').modal('show');
 }
