@@ -93,7 +93,6 @@ function getflagandoptions() {
             //i = Math.floor(Math.random() * 10);
             flagnumber = flagnumbersused.includes(i);
             flagothernumbers = otherflagoptions.includes(i);
-            otherflagoptions.push(i);
             //console.log(i);
             //console.log(flagnumber);
             //console.log(flagothernumbers);
@@ -101,6 +100,7 @@ function getflagandoptions() {
         }
         while (flagnumber === true || flagothernumbers === true); 
         answeroptions.push(i);
+        otherflagoptions.push(i);
         //console.log(i + " is a option");
     }
     while(answeroptions.length < 4);
