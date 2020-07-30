@@ -1,12 +1,9 @@
-var flagnumbersused = [];
+var flagnumbersused;
 var highscore30 = localStorage.getItem("highscore30");
 var highscore60 = localStorage.getItem("highscore60");
-var score = 0;
-var flagnumber;
-var flagothernumbers;
+var score;
 var answer;
 var gamesecs;
-var i;
 
 // function to Start the Game 
 function startgame() {
@@ -15,7 +12,7 @@ function startgame() {
         window.localStorage.setItem("highscore30", "0"); 
         highscore30 = localStorage.getItem("highscore30");
     }
-    
+     
     if(window.localStorage.getItem("highscore60") === null){
         window.localStorage.setItem("highscore60", "0"); 
         highscore60 = localStorage.getItem("highscore60");
@@ -24,6 +21,7 @@ function startgame() {
 
     // Have selected timer set and start form removed
     gamesecs = document.getElementById("timer-form").elements.seconds.value;
+    //Testing the timer below
     //console.log(gamesecs);
     starttimercontrols(Number(gamesecs), document.querySelector("#timer"));
     $("#timer-form").remove(); 
@@ -41,14 +39,18 @@ function startgame() {
     var highscoretext = '<div id="highscoretext"><p id="highscoreheader">High Score:</p><div class="row"><div class="col-6"><p id="highscore-30-section">30 Seconds: <span id="highscore-30">'+highscore30 +'</span></p></div><div class="col-6"><p id="highscore-60-section">60 Seconds: <span id="highscore-60">'+ highscore60 +'</span></p></div></div></div>';
     $("#highscoresection").append(highscoretext);
 
-    // Run function to get flag and options 
+    // Run function to get flag and options and clear flag numbers used 
+    flagnumbersused = [];
     getflagandoptions(); 
 }    
 
 // Get Flag and Options for user to pick from and display
 function getflagandoptions() {
     //Empty all previous options and get flag and add it to the options
+    var i;
     var answeroptions = [];
+    var flagnumber;
+    var flagothernumbers;
     //Testing if length is 10. 9 should be selected
     //var flagnumbersused = [0,1,2,3,4,5,6,7,8];
     //Testing to check which options are picked 6,7,8,9 should show
