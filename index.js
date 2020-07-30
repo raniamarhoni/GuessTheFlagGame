@@ -28,7 +28,7 @@ function startgame() {
 
     //Add Game Sections score, timer, flag, correct/incorrect & options to the game
     $("#score-para").append('<p id="score-unit">Score: <span id="score">'+score+'</span></p>'); 
-    $("#flag-div").append('<img src="" id="flag-image">');
+    $("#flag-div").append('<img src="" alt="flag" id="flag-image">');
     $("#truthsection").append('<p id="truth"></p>');
     $("#button1").append('<button id="option1" class="answers" onclick="nextquestion(this.innerHTML)"></button>');
     $("#button2").append('<button id="option2" class="answers" onclick="nextquestion(this.innerHTML)"></button>');
@@ -210,7 +210,7 @@ function replaygame() {
     $("#option3").remove();
     $("#option4").remove();
     $("#highscoretext").remove();
-    var formtext = '<form id="timer-form"><h3 class="game-instructions-header">Select how many seconds?</h3><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=30 checked/> 30 Seconds</label><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" id="seconds" value=60 /> 60 Seconds</label><button type="button" id="startbtn" onclick="startgame()">Start</button></form>';
+    var formtext = '<form id="timer-form"><h3 class="game-instructions-header">Select how many seconds?</h3><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" value=30 checked/> 30 Seconds</label><label class="seconds-text"><input type="radio" class="timer-select" name="seconds" value=60 /> 60 Seconds</label><button type="button" id="startbtn" onclick="startgame()">Start</button></form>';
     $("#seconds-select").append(formtext);
 }
 
