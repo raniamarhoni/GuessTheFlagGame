@@ -21,8 +21,6 @@ function startgame() {
 
     // Have selected timer set and start form removed
     gamesecs = document.getElementById("timer-form").elements.seconds.value;
-    //Testing the timer below
-    //console.log(gamesecs);
     starttimercontrols(Number(gamesecs), document.querySelector("#timer"));
     $("#timer-form").remove(); 
 
@@ -52,26 +50,13 @@ function getflagandoptions() {
     var flagnumber;
     var flagothernumbers;
 
-    //Test 1 to check flag wouldn't be repeated 
-    //var flagnumbersused = [0,1,2,3,4,5,6,7,8];
-
-    //Test 3 to check which options are picked 6,7,8,9 should show
-    //var flagnumbersused = [0,1,2,3,4,5];
-
     //It picks a random number within the length of CountryList Array and checks if the number selected has been used before
     //if it has it'll find another number which hasn't and stores it (answer, used flags and answer options)
     do {
         i = Math.floor(Math.random() * countrylist.length);
-        // TEST 1 and 3 for both flag and option tests comment code above
-        //i = Math.floor(Math.random() * 10);
         flagnumber = flagnumbersused.includes(i);
-        //TEST 1 to check which flag was selected 
-        //console .log(i);
-        //console.log(flagnumber);
     }
     while (flagnumber === true);
-    //TEST 1 and 3 
-    //console.log(i + " has been chosen");
     answer = countrylist[i][0];
     answeroptions.push(i);
     flagnumbersused.push(i);
@@ -80,11 +65,6 @@ function getflagandoptions() {
     var flagpath = ('https://www.countryflags.io/' + countrylist[i][1] + '/shiny/64.png');
     document.getElementById("flag-image").src = flagpath;
 
-    //Test 2 to check the flag image link is correct
-    //console.log("Answer is " + answer);
-    //console.log("Country Code is " + countrylist[i][1]);
-    //console.log(flagpath);
-
     //Empty other flag options and fill in the answer options until we have 4 in the array 
     //which hasnt been an answer before and sort it so the answer isn't in the same place all the time
     var otherflagoptions = []; 
@@ -92,26 +72,14 @@ function getflagandoptions() {
     do {  
         do {
             i = Math.floor(Math.random() * countrylist.length);
-            //Test 3 to check the country flags will be different
-            //i = Math.floor(Math.random() * 10);
             flagnumber = flagnumbersused.includes(i);
             flagothernumbers = otherflagoptions.includes(i);
-            //Test 3
-            //console.log(i);
-            //console.log(flagnumber);
-            //console.log(flagothernumbers);
-
         }
         while (flagnumber === true || flagothernumbers === true); 
         answeroptions.push(i);
         otherflagoptions.push(i);
-        // Test 3 to check which country option is chosen 
-        //console.log(i + " is a option");
     }
     while(answeroptions.length < 4);
-
-    //Test 3 to see all the country options chosen
-    //console.log(answeroptions);
     answeroptions.sort(); 
 
     //Add answers in the answer buttons
@@ -119,32 +87,19 @@ function getflagandoptions() {
     document.getElementById("option2").innerHTML = (countrylist[(answeroptions[1])][0]);
     document.getElementById("option3").innerHTML = (countrylist[(answeroptions[2])][0]);
     document.getElementById("option4").innerHTML = (countrylist[(answeroptions[3])][0]);
-
-    //Test 4 
-    //console.log("Answer is " + answer);
 }
 
 //When option is selected update score and go to next question 
 function nextquestion(answerclicked) {
-    
-    //Test 5 to make sure the the option selected is correct/incorrect and the right outcome on the screen and adds a score if it is correct
-    //console.log("old score is " + score)
-
     //If answer is correct add point to score and update and say correct (green) if not say incorrect (red)
     if (answerclicked === answer) {
         score++;
         document.getElementById("score").textContent = score;
         $("#truth").removeClass().addClass('correct');
         document.getElementById("truth").innerHTML = "correct";
-        //TEST 5
-        //console.log(answerclicked + "is correct")
-        //console.log("new score is " + score)
     } else { 
         $("#truth").removeClass().addClass('incorrect');
         document.getElementById("truth").innerHTML = "incorrect";
-        //TEST 5
-        //console.log(answerclicked + "is incorrect. Answer is " + answer)
-        //console.log("new score is " + score)
     }
 
     // Fill in the next question function
