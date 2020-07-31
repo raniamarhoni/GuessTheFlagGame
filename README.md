@@ -155,7 +155,7 @@ Ad there is 240 countries on the 'countrylist' array it would be impossible to r
 ## Deployment
 To site uses GitHub pages to deploy the site,  I went within the setting tab on GitHub within the options tab I scrolled down to GitHub pages and with source I selected Master Branch and clicked save to host the site. For this to work the landing page must be named index.html. When a new commit is done on the repository it will automatically update to the master branch.
 
-Later on I changed it to have 2 branches so now whenever a new commit is done I push it to the testingcomments branch by typing ‘git push -u origin testingcomments’ into the terminal if I wish to put this on the master branch too I go onto GitHub and within the project a notification comes up to compare & pull request. If happy with the changes to be put onto the master branch I click create a pull request, click merge pull request and then click confirm merge to add it onto the master branch. 
+Later on I changed it to have 2 branches so now whenever a new commit is done I push it to the testingcomments branch by typing ‘git push -u origin testingcomments’ into the terminal if I wish to put this on the master branch too I go onto GitHub and within the project I go onto the testing comments branch. A notification comes up to compare & pull request. If happy with the changes to be put onto the master branch I click create a pull request, click merge pull request and then click confirm merge to add it onto the master branch. 
 
 To run the code locally, you can clone this repository directly into the editor of your choice doing the following below 
 1.	Open a terminal in the editor of your choice 
