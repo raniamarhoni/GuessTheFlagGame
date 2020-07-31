@@ -138,7 +138,6 @@ On the nextquestion function at the beginning I console log the current score Th
 
 On the else section of the if I console log what I clicked, the answer and the score. If it says incorrect on the screen, the answer was one of the options and the score stays the same it has passed the test. 
  
- 
 ### Testing variables within a function in Chrome Dev Tools 
 I used Chrome Dev Tools to test variables are working during a function to do this I did the following below and how it changes during the game
 1.	Right click on the site and click on inspect
@@ -153,17 +152,20 @@ I used Chrome Dev Tools to test variables are working during a function to do th
  
 Ad there is 240 countries on the 'countrylist' array it would be impossible to run out of flags within the 60 second mark as they would need to click on it 4 times every second. In the future when a 2-minute game has been developed then I would need to end the game when they have reached all the flags. 
  
-
 ## Deployment
+To site uses GitHub pages to deploy the site,  I went within the setting tab on GitHub within the options tab I scrolled down to GitHub pages and with source I selected Master Branch and clicked save to host the site. For this to work the landing page must be named index.html. When a new commit is done on the repository it will automatically update to the master branch.
 
-To site uses GitHub pages to deploy the site,  I went within the setting tab on GitHub within the options tab I scrolled down to GitHub pages and with source I selected Master Branch and clicked save to host the site. For this to work the landing page must be named index.html. When a new commit is done on the repository it will automatically update to the master branch 
+Later on I changed it to have 2 branches so now whenever a new commit is done I push it to the testingcomments branch by typing ‘git push -u origin testingcomments’ into the terminal if I wish to put this on the master branch too I go onto GitHub and within the project a notification comes up to compare & pull request. If happy with the changes to be put onto the master branch I click create a pull request, click merge pull request and then click confirm merge to add it onto the master branch. 
 
-To run the code locally, you can clone this repository directly into the editor of your choice by pasting (git clone https://github.com/raniamarhoni/GuessTheFlagGame) into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
+To run the code locally, you can clone this repository directly into the editor of your choice doing the following below 
+1.	Open a terminal in the editor of your choice 
+2.	Paste (git clone https://github.com/raniamarhoni/GuessTheFlagGame) onto the terminal
+3.	To cut ties with this GitHub repository type (git remote rm origin) into the terminal 
+4.	You will have be able to edit the GitHub repository without it being linked into this one. 
 
 If you need more information to clone the repository use this link https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository. 
 
 To open the game the link is https://raniamarhoni.github.io/GuessTheFlagGame/ 
-
 ## Credits 
 
 ### Contents
