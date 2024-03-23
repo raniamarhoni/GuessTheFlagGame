@@ -61,7 +61,7 @@ function getflagandoptions() {
     answeroptions.push(i);
     flagnumbersused.push(i);
 
-    //https://www.countryflags.io/ used to get country flag and reates path to flag
+    //https://flagsapi.com/ used to get country flag and reates path to flag
     var flagpath = ('https://flagsapi.com/' + countrylist[i][1] + '/flat/64.png');
     document.getElementById("flag-image").src = flagpath;
 
