@@ -62,7 +62,7 @@ function getflagandoptions() {
     flagnumbersused.push(i);
 
     //https://www.countryflags.io/ used to get country flag and reates path to flag
-    var flagpath = ('https://www.countryflags.io/' + countrylist[i][1] + '/shiny/64.png');
+    var flagpath = ('https://flagsapi.com/' + countrylist[i][1] + '/flat/64.png');
     document.getElementById("flag-image").src = flagpath;
 
     //Empty other flag options and fill in the answer options until we have 4 in the array 

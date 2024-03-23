@@ -35,7 +35,7 @@ Pick if you want a 30 or 60 second game to guess whose flag it is. You will be s
 
 There is a timing function which is set by how long the user wants the timer for the game either 30 seconds or 60 seconds. When the timer runs out the game is over. 
 
-Flags are obtained by https://www.countryflags.io/ and an array put into another [JavaScript file](https://github.com/raniamarhoni/GuessTheFlagGame/blob/afc44a844d84f94245770742e9acd3d3095fba1e/assets/js/countrylist.js)). 
+Flags are obtained by https://flagsapi.com/ and an array put into another [JavaScript file](https://github.com/raniamarhoni/GuessTheFlagGame/blob/afc44a844d84f94245770742e9acd3d3095fba1e/assets/js/countrylist.js)). 
 This will help the game to have access to lots of flags to create the questions. It has been put in another JavaScript file as it is too big and I don’t want the page to get overwhelmed with code.
 
 Each question is random it will never be the same questionnaire for everyone. This is done by having an array of countries to be the answers and options and then having the answer and options selected by random but making sure the same flag does not come up twice on a questionnaire.  
@@ -172,7 +172,7 @@ To open the game the link is https://raniamarhoni.github.io/GuessTheFlagGame/
 All contents in this site was written by me.
 
 ### Media 
-All flags are from https://www.countryflags.io/ see license 
+All flags are from https://flagsapi.com/ see license 
 
 ### Acknowledgements 
 The startTimerControls function was taken from the game https://github.com/hschafer2017/Stream-Two-Project  
